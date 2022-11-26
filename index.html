@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- <div class="container py-5">
+        <div class="card mb-5">
+          <div class="card-header">
+            Todo App
+          </div>
+          <div class="card-body">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="New Task..." id="input-task">
+            </div>
+    
+            <button type="button" class="btn btn-primary" id="submit-btn">Submit</button>
+          </div>
+        </div> -->
+    
+        <!-- <div class="card">
+          <div class="card-header">Task List</div>
+          <div class="card-body">
+            <ul class="list-group" id="parent-ul">
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Hello</span>
+                <button class="btn btn-sm btn-danger delete-task">Delete</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script>
+        const todos = [
+          {
+            id: 1,
+            name: "Task One",
+          },
+          {
+            id: 2,
+            name: "Task Two",
+          },
+        ];
+    
+        function getElement(selector) {
+          return document.querySelector(selector);
+        }
+    
+        function renderList() {
+          const parentUL = getElement("#parent-ul");
+    
+          parentUL.innerHTML = "";
+    
+          let taskElement = "";
+    
+          for (let todo of todos) {
+            taskElement += `
+            <li class="list-group-item d-flex justify-content-between">
+              <span>${todo.name}</span>
+              <span>
+                <button class="btn btn-sm btn-warning edit-task" data-id-task="${todo.id}">Edit</button>
+                <button class="btn btn-sm btn-danger delete-task" data-id-task="${todo.id}">Delete</button>
+              </span>
+            </li>\n`;
+          }
+    
+          if (taskElement === "") {
+            taskElement = "<h1 class='text-center'>No Task</h1>";
+          }
+    
+          parentUL.innerHTML = taskElement;
+    
+          mountAction();
+        }
+    
+        const submitBTN = getElement('#submit-btn');
+        const inputELEMENT = getElement("#input-task");
+    
+        renderList();
+    
+        submitBTN.addEventListener("click", function () {
+          const name = inputELEMENT.value;
+          const id = new Date().getTime();
+    
+          if (name === "") {
+            return;
+          }
+    
+          todos.push({
+            id,
+            name,
+          });
+    
+          renderList();
+    
+          inputELEMENT.value = "";
+        });
+    
+        function mountAction() {
+          const deleteBTNS = document.querySelectorAll('.delete-task');
+    
+          for (let btnDELETE of deleteBTNS) {
+            btnDELETE.addEventListener("click", function (element) {
+              const id = element.target.getAttribute('data-id-task');
+              const index = todos.findIndex(todo => todo.id == id);
+    
+              todos.splice(index, 1);
+    
+              renderList();
+            });
+          }
+        }
+      </script> -->
+
+
+
+      <div class="wrapper">
+        <header>Todo App</header>
+        <div class="inputField">
+          <input type="text" placeholder="Add your new todo">
+          <button><i class="fas fa-plus"></i></button>
+        </div>
+        <ul class="todoList">
+        </ul>
+        <div class="footer">
+          <span>You have <span class="pendingTasks"></span> pending tasks</span>
+          <button>Clear All</button>
+        </div>
+      </div>
+</body>
+<script src="app.js"></script>
+</html>
